@@ -23,7 +23,12 @@
 			</div>
 		</nav>
 		
-		<div class="container-fluid">
+		<div class="container">
+			<p> I wrote this website in my free time and purchased the domain and hosting with my own money expecting no return. There are no ads, no analytics collected about you (by me, requests to third party sites may leak information) and the games will always be free. However, if you think I did an exceptional job, you can send small amounts of Ethereum here:</p>
+			
+			<p>0xfC8C8911A5Cf10318B9Df1F1EbCC5447C9b5a438</p>
+
+			<p>This project is also open source <a href="https://github.com/d-jo/learndozenal">on github.</a></p>
 		</div>
 
 		<div class="fixed-bottom">
