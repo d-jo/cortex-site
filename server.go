@@ -17,10 +17,8 @@ func main() {
 	var host string
 
 	host = ":8080"
-	log.Println("log to ", string(os.Args[1]))
-	logfile := os.Args[1]
 	t := time.Now()
-	logfile = fmt.Sprintf("%d-%02d-%02dT%02d-%02d-%02d", t.Year(), t.Month(), t.Day(), t.Hour(), t.Minute(), t.Second())
+	logfile := fmt.Sprintf("%d-%02d-%02dT%02d-%02d-%02d", t.Year(), t.Month(), t.Day(), t.Hour(), t.Minute(), t.Second())
 	file, fileerr = os.OpenFile(logfile, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
 	if fileerr != nil {
 		log.Printf("error opening log file %s; %s\r\n", logfile, fileerr)
