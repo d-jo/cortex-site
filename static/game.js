@@ -44,13 +44,24 @@ validate = function(settings){
 
 
 $(document).ready(function() {
-	var load = '' + atob(urlParam('load'));
-	var settings = JSON.parse(load);
+	try {
+		var load = '' + atob(urlParam('load'));
+		var settings = JSON.parse(load);
+	}
+	catch(err){
+
+	}
+	if (settings == null) {
+		settings = {}
+	}
 	validate(settings);
 	document.getElementById("submission").onkeyup = function(e){
 		if(e.keyCode == 13){
 			check();
 		}
 	}
+
+	
+
 });
 
