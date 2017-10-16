@@ -1,3 +1,11 @@
+b12 = function(num){
+	return (num).toString(12).replace(/a/g, "X").replace(/b/g, "E");
+}
+
+b10 = function(num) {
+	return (parseInt(num.replace(/X/g, "a").replace(/E/g, "b"), 12));
+}
+
 urlParam = function(name){
 	    var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
 	    if (results == null){
@@ -34,13 +42,15 @@ validate = function(settings){
 	}
 }
 
-b12 = function(num){
-	return (num).toString(12).replace(/a/g, "X").replace(/b/g, "E");
-}
 
 $(document).ready(function() {
 	var load = '' + atob(urlParam('load'));
 	var settings = JSON.parse(load);
 	validate(settings);
+	document.getElementById("submission").onkeyup = function(e){
+		if(e.keyCode == 13){
+			check();
+		}
+	}
 });
 

@@ -1,9 +1,14 @@
-body {
-
-}
-
 .container {
 	padding-left: 2rem;
 	padding-right: 2rem;
 	padding-top: 2rem;
+}
+
+.center {
+	float: none;
+	margin: 0 auto;
+}
+
+h1 {
+	padding: 20px;
 }
