@@ -77,15 +77,24 @@ check = function(){
 	if (operator == '/') {
 		answer(num_a / num_b, input);
 	}
+	inputSelector.focus();
 }
 
 b12check = function() {
 	$(".base12").each(function(i) {
-		if($(this).val() != null) {
+		value = null;
+		console.log("val" + $(this).val());
+		console.log("text" + $(this).text());
+		if($(this).val() != "") {
+			console.log("a");
 			$(this).val($(this).val().replace(/\//g, "X").replace(/\*/g, "E"));
+			value = b10($(this).val());
+			$(this).val(b12(value));
 		}
-		if($(this).text() != null) {
+		if($(this).text() != "") {
 			$(this).text($(this).text().replace(/\//g, "X").replace(/\*/g, "E"));
+			value = b10($(this).text());
+			$(this).text(b12(value));
 		}
 	});
 }
@@ -106,6 +115,10 @@ $(document).ready(function() {
 		if(e.keyCode == 13){
 			check();
 		}
+		b12check();
+	}
+
+	document.getElementById("timer_value").onkeyup = function(e){
 		b12check();
 	}
 
