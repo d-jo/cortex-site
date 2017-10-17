@@ -52,8 +52,16 @@
 					<input type="text" class="form-control base12" id="submission" name="submission">
 				</div>
 			</div>
+			
 			<div class="row">
 				<div class="col">
+					<h1 align="left">Settings</h1>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="row">
 					<div class="input-group">
 						<span class="input-group-addon">
 							Enable Timer
@@ -66,6 +74,17 @@
 							Seconds/Problem
 						</span>
 					</div>
+					</div>
+
+					<div class="row">
+						<div class="btn-group special" role="group">
+							<button class="btn btn-success special" type="button">Start</button>
+							<button class="btn btn-info special" type="button">Pause</button>
+							<button class="btn btn-danger special" type="button">Restart</button>
+						</div>
+					</div>
+				</div>
+				<div class="col">
 				</div>
 			</div>
 
