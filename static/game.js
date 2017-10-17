@@ -42,6 +42,8 @@ validate = function(settings){
 	}
 }
 
+var timer = null;
+var time = 10.0;
 var score = 0;
 var playing = false;
 var numASelector = $("#num_a");
@@ -49,6 +51,7 @@ var operatorSelector = $("#operator");
 var numBSelector = $("#num_b");
 var inputSelector = $("#submission");
 var scoreSelector = $("#score");
+var timeSelector = $("#time");
 var settings = {};
 
 answer = function(expected, actual) {
@@ -61,7 +64,23 @@ answer = function(expected, actual) {
 	inputSelector.val("");
 }
 
+startTicker = function() {
+	timer = setInterval(function() {
+		if (time < 0) {
+			clearTimeout(timer);
+			playing = false;
+		}
+		time = time - 0.1;
+		timeSelector.text(Math.round(time * 10) / 10);
+		console.log(time);
+	}, 100);
+}
+
 check = function(){
+	if (!playing) {
+		playing = true;
+		startTicker();
+	}
 	num_a = b10(numASelector.text());
 	operator = operatorSelector.text();
 	num_b = b10(numBSelector.text());
