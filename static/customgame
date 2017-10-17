@@ -33,7 +33,7 @@
 			<div class="row">
 				<div class="col">
 					<div>
-						<h1 align="right" class="base12" id="num_a">5</h1>
+						<h1 align="right" class="base12" id="num_a">E</h1>
 					</div>
 				</div>
 				<div class="col">
@@ -43,7 +43,7 @@
 				</div>
 				<div class="col">
 					<div>
-						<h1 align="left" class="base12" id="num_b">2</h1>
+						<h1 align="left" class="base12" id="num_b">X</h1>
 					</div>
 				</div>
 			</div>
@@ -97,7 +97,7 @@
 					<div class="row">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1">Settings</span>
-							<input type="text" class="form-control" id="settings">
+							<input type="text" class="form-control" id="settings_value">
 						</div>
 					</div>
 					<div class="row">
@@ -110,6 +110,57 @@
 
 				</div>
 			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="row">
+						<div class="input-group">
+							<span class="input-group-addon">A min</span>
+							<input type="text" class="form-control" id="a_min_value">
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-group">
+							<span class="input-group-addon">A max</span>
+							<input type="text" class="form-control" id="a_max_value">
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="row">
+						<div class="input-group">
+							<span class="input-group-addon">B min</span>
+							<input type="text" class="form-control" id="b_min_value">
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-group">
+							<span class="input-group-addon">B max</span>
+							<input type="text" class="form-control" id="b_max_value">
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="row">
+						<span class="input-group-addon">Operators</span>
+					</div>
+					<div class="row">
+						<div class="col">
+							<input type="checkbox" value="">+
+						</div>
+						<div class="col">
+							<input type="checkbox" value="">-
+						</div>
+						<div class="col">
+							<input type="checkbox" value="">*
+						</div>
+						<div class="col">
+							<input type="checkbox" value="">/
+						</div>
+					</div>
+				</div>
+			</div>
+
 
 		</div>
 
