@@ -16,7 +16,7 @@ func main() {
 	var err error
 	var host string
 
-	host = ":3365"
+	host = ":80"
 	t := time.Now()
 	logfile := fmt.Sprintf("%d-%02d-%02dT%02d-%02d-%02d", t.Year(), t.Month(), t.Day(), t.Hour(), t.Minute(), t.Second())
 	file, fileerr = os.OpenFile(logfile, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
@@ -28,7 +28,7 @@ func main() {
 		log.Printf("initilized log file %s\r\n", logfile)
 	}
 	log.Println("starting static file server...")
-	http.Handle("/", wrapStaticServer(http.FileServer(http.Dir("static")), "static"))
+	http.Handle("/", wrapStaticServer(http.FileServer(http.Dir(os.Args[1])), "static"))
 
 	if _, err2 := os.Stat("https/server.crt"); os.IsNotExist(err2) {
 		log.Printf("https fail, missing /web/https/server.crt\r\n")
