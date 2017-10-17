@@ -26,14 +26,16 @@
 		
 		<div class="container">
 			<div class="row">
-				<h1 align="center" id="time">
-					10.0
-				</h1>
+				<div class="col">
+					<h1 align="center" id="time">
+						10.0
+					</h1>
+				</div>
 			</div>
 			<div class="row">
 				<div class="col">
 					<div class="base12">
-						<h1 align="center" id="num_a">
+						<h1 align="right" id="num_a">
 							0
 						</h1>
 					</div>
@@ -47,7 +49,7 @@
 				</div>
 				<div class="col">
 					<div class="base12">
-						<h1 align="center" id="num_b">
+						<h1 align="left" id="num_b">
 							0
 						</h1>
 					</div>
