@@ -64,7 +64,7 @@ check = function(){
 	num_a = b10(numASelector.text());
 	operator = operatorSelector.text();
 	num_b = b10(numBSelector.text());
-	input = b10(inputSelector.val());
+	input = inputSelector.val();
 	if (operator == '+') {
 		answer(num_a + num_b, input);
 	}
@@ -82,19 +82,11 @@ check = function(){
 
 b12check = function() {
 	$(".base12").each(function(i) {
-		value = null;
-		console.log("val" + $(this).val());
-		console.log("text" + $(this).text());
 		if($(this).val() != "") {
-			console.log("a");
 			$(this).val($(this).val().replace(/\//g, "X").replace(/\*/g, "E"));
-			value = b10($(this).val());
-			$(this).val(b12(value));
 		}
 		if($(this).text() != "") {
 			$(this).text($(this).text().replace(/\//g, "X").replace(/\*/g, "E"));
-			value = b10($(this).text());
-			$(this).text(b12(value));
 		}
 	});
 }
