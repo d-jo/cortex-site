@@ -16,7 +16,7 @@ func main() {
 	var err error
 	var host string
 
-	host = ":8080"
+	host = ":80"
 	t := time.Now()
 	logfile := fmt.Sprintf("%d-%02d-%02dT%02d-%02d-%02d", t.Year(), t.Month(), t.Day(), t.Hour(), t.Minute(), t.Second())
 	file, fileerr = os.OpenFile(logfile, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
