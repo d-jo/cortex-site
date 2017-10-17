@@ -27,13 +27,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<h1 align="center" id="time">10.0</h1>
+					<h1 align="center" class="base12" id="time">10.0</h1>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col">
-					<div class="base12">
-						<h1 align="right" id="num_a">5</h1>
+					<div>
+						<h1 align="right" class="base12" id="num_a">5</h1>
 					</div>
 				</div>
 				<div class="col">
@@ -42,14 +42,30 @@
 					</div>
 				</div>
 				<div class="col">
-					<div class="base12">
-						<h1 align="left" id="num_b">2</h1>
+					<div>
+						<h1 align="left" class="base12" id="num_b">2</h1>
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col" id="in">
+				<div class="col input-group input-group-lg">
 					<input type="text" class="form-control base12" id="submission" name="submission">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="input-group">
+						<span class="input-group-addon">
+							Enable Timer
+						</span>
+						<span class="input-group-addon">
+							<input type="checkbox" aria-label="timer">
+						</span>
+						<input type="text" class="form-control base12" name="timer_value" id="timer_value">
+						<span class="input-group-addon">
+							Seconds/Problem
+						</span>
+					</div>
 				</div>
 			</div>
 
