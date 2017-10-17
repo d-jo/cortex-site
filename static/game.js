@@ -3,7 +3,7 @@ b12 = function(num){
 }
 
 b10 = function(num) {
-	return (parseInt(num.replace(/X/g, "a").replace(/E/g, "b"), 12));
+	return parseInt(num.replace(/X/g, "a").replace(/E/g, "b"), 12);
 }
 
 urlParam = function(name){
@@ -42,18 +42,47 @@ validate = function(settings){
 	}
 }
 
+var score = 0;
+var playing = false;
+var numASelector = $("#num_a");
+var operatorSelector = $("#operator");
+var numBSelector = $("#num_b");
+var inputSelector = $("#submission");
+var settings = {};
+
+answer = function(expected, actual) {
+	alert("expected: " + expected);
+	alert("actual: " + actual);
+	if (expected == actual) {
+		alert('right');
+	} else {
+		alert('wrong');
+	}
+}
+
 check = function(){
-	num_a = b10($("#num_a").val());
-	operator = $("#operator").val();
-	num_b = b10($("#num_b").val());
-	input = b10($("#submission").val());
-	
+	num_a = b10(numASelector.text());
+	operator = operatorSelector.text();
+	num_b = b10(numBSelector.text());
+	input = b10(inputSelector.val());
+	if (operator == '+') {
+		answer(num_a + num_b, input);
+	}
+	if (operator == '-') {
+		answer(num_a - num_b, input);
+	}
+	if (operator == '*') {
+		answer(num_a * num_b, input);
+	}
+	if (operator == '/') {
+		answer(num_a / num_b, input);
+	}
 }
 
 $(document).ready(function() {
 	try {
 		var load = '' + atob(urlParam('load'));
-		var settings = JSON.parse(load);
+		settings = JSON.parse(load);
 	}
 	catch(err){
 
@@ -66,9 +95,9 @@ $(document).ready(function() {
 		if(e.keyCode == 13){
 			check();
 		}
-		input = $("#submission").val();
+		input = inputSelector.val();
 		input = input.toString().replace(/\//g, "X").replace(/\*/g, "E");
-		$("#submission").val(input);
+		inputSelector.val(input);
 
 	}
 
