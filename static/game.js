@@ -48,16 +48,17 @@ var numASelector = $("#num_a");
 var operatorSelector = $("#operator");
 var numBSelector = $("#num_b");
 var inputSelector = $("#submission");
+var scoreSelector = $("#score");
 var settings = {};
 
 answer = function(expected, actual) {
-	alert("expected: " + expected);
-	alert("actual: " + actual);
 	if (expected == actual) {
-		alert('right');
+		score = score + 1;
 	} else {
-		alert('wrong');
+		score = score - 1;
 	}
+	scoreSelector.text(score);
+	inputSelector.val("");
 }
 
 check = function(){
