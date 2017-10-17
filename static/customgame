@@ -55,7 +55,16 @@
 			
 			<div class="row">
 				<div class="col">
-					<h1 align="left">Settings</h1>
+					<h1 align="right">Score</h1>
+				</div>
+				<div class="col">
+					<h1 id="score">0</h1>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<h1>Settings</h1>
 				</div>
 			</div>
 
@@ -78,7 +87,6 @@
 
 					<div class="row">
 						<div class="btn-group special" role="group">
-							<button class="btn btn-success special" type="button">Start</button>
 							<button class="btn btn-info special" type="button">Pause</button>
 							<button class="btn btn-danger special" type="button">Restart</button>
 						</div>
