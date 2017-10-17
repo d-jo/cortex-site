@@ -52,7 +52,14 @@ var numBSelector = $("#num_b");
 var inputSelector = $("#submission");
 var scoreSelector = $("#score");
 var timeSelector = $("#time");
-var settings = {};
+var settings = {"operators": ['+', '-']};
+
+newProblem = function(aMin, aMax, bMin, bMax, operators) {
+	genA = Math.floor((Math.random() * aMax) + aMin);
+	genB = Math.floor((Math.random() * bMax) + bMin);
+	op = operators[(genA + genB) % operators.length];
+	console.log(op);
+}
 
 answer = function(expected, actual) {
 	if (expected == actual) {
@@ -62,6 +69,7 @@ answer = function(expected, actual) {
 	}
 	scoreSelector.text(score);
 	inputSelector.val("");
+	newProblem(b10(numAMinSelector.text()), b10(numAMaxSelector.text()), b10(numBMinSelector.text()), b10(numBMaxSelector.text()), settings.operators);
 }
 
 startTicker = function() {
@@ -72,7 +80,6 @@ startTicker = function() {
 		}
 		time = time - 0.1;
 		timeSelector.text(Math.round(time * 10) / 10);
-		console.log(time);
 	}, 100);
 }
 
@@ -130,7 +137,7 @@ $(document).ready(function() {
 		b12check();
 	}
 
-	document.getElementById("timer_value").onkeyup = function(e){
+	document.getElementById("time").onkeyup = function(e){
 		b12check();
 	}
 
