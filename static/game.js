@@ -79,6 +79,17 @@ check = function(){
 	}
 }
 
+b12check = function() {
+	$(".base12").each(function(i) {
+		if($(this).val() != null) {
+			$(this).val($(this).val().replace(/\//g, "X").replace(/\*/g, "E"));
+		}
+		if($(this).text() != null) {
+			$(this).text($(this).text().replace(/\//g, "X").replace(/\*/g, "E"));
+		}
+	});
+}
+
 $(document).ready(function() {
 	try {
 		var load = '' + atob(urlParam('load'));
@@ -95,10 +106,7 @@ $(document).ready(function() {
 		if(e.keyCode == 13){
 			check();
 		}
-		input = inputSelector.val();
-		input = input.toString().replace(/\//g, "X").replace(/\*/g, "E");
-		inputSelector.val(input);
-
+		b12check();
 	}
 
 	
