@@ -38,10 +38,17 @@ validate = function(settings){
 	}
 
 	if (settings['time'] == null) {
-		settings['time'] = 10;
+		settings['time'] = 10.0;
 	}
 }
 
+check = function(){
+	num_a = b10($("#num_a").val());
+	operator = $("#operator").val();
+	num_b = b10($("#num_b").val());
+	input = b10($("#submission").val());
+	
+}
 
 $(document).ready(function() {
 	try {
@@ -59,6 +66,10 @@ $(document).ready(function() {
 		if(e.keyCode == 13){
 			check();
 		}
+		input = $("#submission").val();
+		input = input.toString().replace(/\//g, "X").replace(/\*/g, "E");
+		$("#submission").val(input);
+
 	}
 
 	
