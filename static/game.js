@@ -58,14 +58,22 @@ var scoreSelector = $("#score");
 var timeSelector = $("#time");
 var settings = {"operators": ['+', '-']};
 
-newProblem = function(aMin, aMax, bMin, bMax, operators) {
-	genA = Math.floor((Math.random() * aMax) + aMin);
-	genB = Math.floor((Math.random() * bMax) + bMin);
-	op = operators[(genA + genB) % operators.length];
-	console.log(op);
+function getRandomInt(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+}
+
+newProblem = function() {
+	genA = getRandomInt(settings['a_min'], settings['a_max']);
+	genB = getRandomInt(settings['b_min'], settings['b_max']);
+	numASelector.text(b12(genA));
+	numBSelector.text(b12(genB));
 }
 
 answer = function(expected, actual) {
+	console.log("got " + actual);
+	console.log("expected " + expected);
 	if (expected == actual) {
 		score = score + 1;
 	} else {
@@ -73,7 +81,7 @@ answer = function(expected, actual) {
 	}
 	scoreSelector.text(score);
 	inputSelector.val("");
-	newProblem(b10(numAMinSelector.text()), b10(numAMaxSelector.text()), b10(numBMinSelector.text()), b10(numBMaxSelector.text()), settings.operators);
+	newProblem();
 }
 
 startTicker = function() {
@@ -97,16 +105,16 @@ check = function(){
 	num_b = b10(numBSelector.text());
 	input = inputSelector.val();
 	if (operator == '+') {
-		answer(num_a + num_b, input);
+		answer(b12(num_a + num_b), input);
 	}
 	if (operator == '-') {
-		answer(num_a - num_b, input);
+		answer(b12(num_a - num_b), input);
 	}
 	if (operator == '*') {
-		answer(num_a * num_b, input);
+		answer(b12(num_a * num_b), input);
 	}
 	if (operator == '/') {
-		answer(num_a / num_b, input);
+		answer(b12(num_a / num_b), input);
 	}
 	inputSelector.focus();
 }
