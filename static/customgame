@@ -146,16 +146,16 @@
 					</div>
 					<div class="row">
 						<div class="col">
-							<input type="checkbox" value="">+
+							<input type="checkbox" class="messageCheckbox" value="+" name="options[]">
 						</div>
 						<div class="col">
-							<input type="checkbox" value="">-
+							<input type="checkbox" class="messageCheckbox" value="-" name="options[]">
 						</div>
 						<div class="col">
-							<input type="checkbox" value="">*
+							<input type="checkbox" class="messageCheckbox" value="*" name="options[]">
 						</div>
 						<div class="col">
-							<input type="checkbox" value="">/
+							<input type="checkbox" class="messageCheckbox" value="/" name="options[]">
 						</div>
 					</div>
 				</div>
