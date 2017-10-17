@@ -4,6 +4,10 @@
 	padding-top: 2rem;
 }
 
+.col {
+	margin: 10px;
+}
+
 .center {
 	float: none;
 	margin: 0 auto;

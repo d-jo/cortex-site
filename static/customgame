@@ -85,6 +85,21 @@
 					</div>
 				</div>
 				<div class="col">
+
+					<div class="row">
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1">Settings</span>
+							<input type="text" class="form-control" id="settings">
+						</div>
+					</div>
+					<div class="row">
+						<div class="btn-group special" role="group">
+							<button class="btn btn-danger special" type="button">Load</button>
+							<button class="btn btn-success special" type="button">Export</button>
+						</div>
+					</div>
+
+
 				</div>
 			</div>
 
