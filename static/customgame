@@ -26,22 +26,27 @@
 		
 		<div class="container">
 			<div class="row">
+				<h1 align="center" id="time">
+					10.0
+				</h1>
+			</div>
+			<div class="row">
 				<div class="col">
-					<div class="well">
+					<div class="base12">
 						<h1 align="center" id="num_a">
 							0
 						</h1>
 					</div>
 				</div>
 				<div class="col">
-					<div class="well">
+					<div>
 						<h1 align="center" id="operator">
 							-
 						</h1>
 					</div>
 				</div>
 				<div class="col">
-					<div class="well">
+					<div class="base12">
 						<h1 align="center" id="num_b">
 							0
 						</h1>
@@ -50,9 +55,10 @@
 			</div>
 			<div class="row">
 				<div class="col" id="in">
-					<input type="text" class="form-control" id="submission" name="submission">
+					<input type="text" class="form-control base12" id="submission" name="submission">
 				</div>
 			</div>
+
 		</div>
 
 		<div class="fixed-bottom">
