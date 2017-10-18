@@ -15,7 +15,7 @@ urlParam = function(name){
 	    }
 }
 
-validate = function(settings){
+validate = function(){
 	
 	if (settings['a_min'] == null) {
 		settings['a_min'] = 0;
@@ -40,6 +40,10 @@ validate = function(settings){
 	if (settings['time'] == null) {
 		settings['time'] = 10.0;
 	}
+	
+	if(settings['operators'] == null) {
+		settings['operators'] = ['+', '-'];
+	}
 }
 
 var timer = null;
@@ -56,7 +60,7 @@ var numBMaxSelector = $("b_max_selector");
 var inputSelector = $("#submission");
 var scoreSelector = $("#score");
 var timeSelector = $("#time");
-var settings = {"operators": ['+', '-']};
+var settings = {};
 
 function getRandomInt(min, max) {
 	min = Math.ceil(min);
@@ -69,6 +73,8 @@ newProblem = function() {
 	genB = getRandomInt(settings['b_min'], settings['b_max']);
 	numASelector.text(b12(genA));
 	numBSelector.text(b12(genB));
+	opNum = settings['operators'].length;
+	operatorSelector.text(settings['operators'][getRandomInt(0, opNum)]);
 }
 
 answer = function(expected, actual) {
@@ -76,6 +82,7 @@ answer = function(expected, actual) {
 	console.log("expected " + expected);
 	if (expected == actual) {
 		score = score + 1;
+		time = settings['time'];
 	} else {
 		score = score - 1;
 	}
@@ -141,7 +148,9 @@ $(document).ready(function() {
 	if (settings == null) {
 		settings = {}
 	}
-	validate(settings);
+	validate();
+	newProblem();
+
 	document.getElementById("submission").onkeyup = function(e){
 		if(e.keyCode == 13){
 			check();
