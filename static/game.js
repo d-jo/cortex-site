@@ -40,10 +40,6 @@ validate = function(){
 	if (settings['time'] == null) {
 		settings['time'] = 10.0;
 	}
-	
-	if(settings['operators'] == null) {
-		settings['operators'] = ['+', '-'];
-	}
 }
 
 var timer = null;
