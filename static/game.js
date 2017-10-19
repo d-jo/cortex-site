@@ -74,8 +74,6 @@ newProblem = function() {
 }
 
 answer = function(expected, actual) {
-	console.log("got " + actual);
-	console.log("expected " + expected);
 	if (expected == actual) {
 		score = score + 1;
 		time = settings['time'];
