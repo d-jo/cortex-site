@@ -17,19 +17,19 @@ urlParam = function(name){
 
 validate = function(){
 	
-	if (settings['a_min'] == null) {
+	if (isNaN(settings['a_min'])) {
 		settings['a_min'] = 0;
 	}
 
-	if (settings['a_max'] == null) {
+	if (isNaN(settings['a_max'])) {
 		settings['a_max'] = 42;
 	}
 
-	if (settings['b_min'] == null) {
+	if (isNaN(settings['b_min'])) {
 		settings['b_min'] = 0;
 	}
 
-	if (settings['b_max'] == null) {
+	if (isNaN(settings['b_max'])) {
 		settings['b_max'] = 42;
 	}
 
@@ -37,7 +37,7 @@ validate = function(){
 		settings['operators'] = ['+', '-'];
 	}
 
-	if (settings['time'] == null) {
+	if (isNaN(settings['time'])) {
 		settings['time'] = 10.0;
 	}
 }
