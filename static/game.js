@@ -15,7 +15,7 @@ urlParam = function(name){
 	    }
 }
 
-validate = function(){
+validateSettings = function(){
 	
 	if (isNaN(settings['a_min'])) {
 		settings['a_min'] = 0;
@@ -142,7 +142,7 @@ $(document).ready(function() {
 	if (settings == null) {
 		settings = {}
 	}
-	validate();
+	validateSettings();
 	newProblem();
 
 	document.getElementById("submission").onkeyup = function(e){
