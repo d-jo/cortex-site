@@ -1,3 +1,20 @@
+var timer = null;
+var time = 10.0;
+var score = 0;
+var playing = false;
+var settings = {};
+
+var numASelector = $("#num_a");
+var numAMinSelector = $("#a_min_selector");
+var numAMaxSelector = $("#a_max_selector");
+var operatorSelector = $("#operator");
+var numBSelector = $("#num_b");
+var numBMinSelector = $("#b_min_selector");
+var numBMaxSelector = $("#b_max_selector");
+var inputSelector = $("#submission");
+var scoreSelector = $("#score");
+var timeSelector = $("#time");
+
 b12 = function(num){
 	return (num).toString(12).replace(/a/g, "X").replace(/b/g, "E");
 }
@@ -41,22 +58,6 @@ validateSettings = function(){
 		settings['time'] = 10.0;
 	}
 }
-
-var timer = null;
-var time = 10.0;
-var score = 0;
-var playing = false;
-var numASelector = $("#num_a");
-var numAMinSelector = $("#a_min_selector");
-var numAMaxSelector = $("#a_max_selector");
-var operatorSelector = $("#operator");
-var numBSelector = $("#num_b");
-var numBMinSelector = $("#b_min_selector");
-var numBMaxSelector = $("#b_max_selector");
-var inputSelector = $("#submission");
-var scoreSelector = $("#score");
-var timeSelector = $("#time");
-var settings = {};
 
 function getRandomInt(min, max) {
 	min = Math.ceil(min);
