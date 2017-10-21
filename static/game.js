@@ -120,7 +120,7 @@ check = function(){
 	inputSelector.focus();
 }
 
-b12check = function() {
+updateBase12Elements = function() {
 	$(".base12").each(function(i) {
 		if($(this).val() != "") {
 			$(this).val($(this).val().replace(/\//g, "X").replace(/\*/g, "E"));
@@ -149,11 +149,11 @@ $(document).ready(function() {
 		if(e.keyCode == 13){
 			check();
 		}
-		b12check();
+		updateBase12Elements();
 	}
 
 	document.getElementById("time").onkeyup = function(e){
-		b12check();
+		updateBase12Elements();
 	}
 
 	
