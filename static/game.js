@@ -75,12 +75,11 @@ newProblem = function() {
 }
 
 answer = function(expected, actual) {
-	if (expected == actual) {
+	if (expected == actual && playing) {
 		score = score + 1;
 		time = settings['time'];
-	} else {
-		score = score - 1;
 	}
+	
 	scoreSelector.text(score);
 	inputSelector.val("");
 	newProblem();
