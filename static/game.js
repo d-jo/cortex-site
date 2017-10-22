@@ -62,6 +62,13 @@ loadSettings = function(b64Code){
 		settings['a_max'] = b10(numAMaxSelector.val());
 		settings['b_min'] = b10(numBMinSelector.val());
 		settings['b_max'] = b10(numBMaxSelector.val());
+		settings['operators'] = [];		
+
+		$("input:checkbox[name=options]:checked").each(function(){
+			settings['operators'].push($(this).val());
+		});
+		console.log(settings['operators']);
+
 	} else {
 		settings = JSON.parse(b64Code);
 	}
