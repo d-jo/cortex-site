@@ -102,6 +102,7 @@
 					</div>
 					<div class="row">
 						<div class="btn-group special" role="group">
+							<button class="btn btn-info special" type="button" onclick="loadSettings()">Apply</button>
 							<button class="btn btn-danger special" type="button">Load</button>
 							<button class="btn btn-success special" type="button">Export</button>
 						</div>

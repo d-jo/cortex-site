@@ -69,6 +69,8 @@ loadSettings = function(b64Code){
 	} else {
 		settings = JSON.parse(b64Code);
 	}
+	validateSettings();
+	newProblem();
 }
 
 function getRandomInt(min, max) {
