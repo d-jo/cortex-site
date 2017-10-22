@@ -27,11 +27,6 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<h1 align="center" class="base12" id="time">10.0</h1>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col">
 					<div>
 						<h1 align="right" class="base12" id="num_a">E</h1>
 					</div>
@@ -69,29 +64,6 @@
 			</div>
 
 			<div class="row">
-				<div class="col">
-					<div class="row">
-					<div class="input-group">
-						<span class="input-group-addon">
-							Enable Timer
-						</span>
-						<span class="input-group-addon">
-							<input type="checkbox" aria-label="timer">
-						</span>
-						<input type="text" class="form-control base12" name="timer_value" id="timer_value">
-						<span class="input-group-addon">
-							Seconds/Problem
-						</span>
-					</div>
-					</div>
-
-					<div class="row">
-						<div class="btn-group special" role="group">
-							<button class="btn btn-info special" type="button">Pause</button>
-							<button class="btn btn-danger special" type="button">Restart</button>
-						</div>
-					</div>
-				</div>
 				<div class="col">
 
 					<div class="row">

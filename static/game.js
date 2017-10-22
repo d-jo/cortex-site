@@ -14,7 +14,6 @@ var numBMaxSelector = $("#b_max_value");
 var timerSelector = $('#timer_value')
 var inputSelector = $("#submission");
 var scoreSelector = $("#score");
-var timeSelector = $("#time");
 
 b12 = function(num){
 	return (num).toString(12).replace(/a/g, "X").replace(/b/g, "E");
@@ -55,9 +54,6 @@ validateSettings = function(){
 		settings['operators'] = ['+', '-'];
 	}
 
-	if (isNaN(settings['time'])) {
-		settings['time'] = 10.0;
-	}
 }
 
 loadSettings = function(b64Code){
@@ -91,7 +87,6 @@ newProblem = function() {
 answer = function(expected, actual) {
 	if (expected == actual && playing) {
 		score = score + 1;
-		time = settings['time'];
 	}
 	
 	scoreSelector.text(score);
@@ -99,21 +94,9 @@ answer = function(expected, actual) {
 	newProblem();
 }
 
-startTicker = function() {
-	timer = setInterval(function() {
-		if (time < 0) {
-			clearTimeout(timer);
-			playing = false;
-		}
-		time = time - 0.1;
-		timeSelector.text(Math.round(time * 10) / 10);
-	}, 100);
-}
-
 check = function(){
 	if (!playing) {
 		playing = true;
-		startTicker();
 	}
 	num_a = b10(numASelector.text());
 	operator = operatorSelector.text();
@@ -166,11 +149,6 @@ $(document).ready(function() {
 		updateBase12Elements();
 	}
 
-	document.getElementById("time").onkeyup = function(e){
-		updateBase12Elements();
-	}
-
-	
 
 });
 
