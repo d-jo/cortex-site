@@ -5,12 +5,13 @@ var playing = false;
 var settings = {};
 
 var numASelector = $("#num_a");
-var numAMinSelector = $("#a_min_selector");
-var numAMaxSelector = $("#a_max_selector");
+var numAMinSelector = $("#a_min_value");
+var numAMaxSelector = $("#a_max_value");
 var operatorSelector = $("#operator");
 var numBSelector = $("#num_b");
-var numBMinSelector = $("#b_min_selector");
-var numBMaxSelector = $("#b_max_selector");
+var numBMinSelector = $("#b_min_value");
+var numBMaxSelector = $("#b_max_value");
+var timerSelector = $('#timer_value')
 var inputSelector = $("#submission");
 var scoreSelector = $("#score");
 var timeSelector = $("#time");
@@ -56,6 +57,17 @@ validateSettings = function(){
 
 	if (isNaN(settings['time'])) {
 		settings['time'] = 10.0;
+	}
+}
+
+loadSettings = function(b64Code){
+	if(b64Code == "" || b64Code == null) {
+		settings['a_min'] = b10(numAMinSelector.val());
+		settings['a_max'] = b10(numAMaxSelector.val());
+		settings['b_min'] = b10(numBMinSelector.val());
+		settings['b_max'] = b10(numBMaxSelector.val());
+	} else {
+		settings = JSON.parse(b64Code);
 	}
 }
 
@@ -134,7 +146,7 @@ updateBase12Elements = function() {
 $(document).ready(function() {
 	try {
 		var load = '' + atob(urlParam('load'));
-		settings = JSON.parse(load);
+		loadSettings(load);
 	}
 	catch(err){
 
