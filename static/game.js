@@ -70,10 +70,19 @@ loadSettings = function(b64Code){
 		console.log(settings['operators']);
 
 	} else {
-		settings = JSON.parse(b64Code);
+		settings = JSON.parse(atob(b64Code));
 	}
 	validateSettings();
 	newProblem();
+}
+
+decodeSettings = function(){
+	loadSettings($('#settings_value').val());
+}
+
+exportSettings = function(){
+	console.log(JSON.stringify(settings));
+	$('#settings_value').val(btoa(JSON.stringify(settings)));
 }
 
 function getRandomInt(min, max) {
@@ -137,7 +146,7 @@ updateBase12Elements = function() {
 
 $(document).ready(function() {
 	try {
-		var load = '' + atob(urlParam('load'));
+		var load = '' + urlParam('load');
 		loadSettings(load);
 	}
 	catch(err){
