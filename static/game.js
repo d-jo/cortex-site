@@ -56,6 +56,14 @@ validateSettings = function(){
 
 }
 
+updateVisuals = function(){
+	numAMinSelector.val(settings['a_min']);
+	numAMaxSelector.val(settings['a_max']);
+	numBMinSelector.val(settings['b_min']);
+	numBMaxSelector.val(settings['b_max']);
+	updateBase12Elements();
+}
+
 loadSettings = function(b64Code){
 	if(b64Code == "" || b64Code == null) {
 		settings['a_min'] = b10(numAMinSelector.val());
@@ -67,7 +75,6 @@ loadSettings = function(b64Code){
 		$("input:checkbox[name=options]:checked").each(function(){
 			settings['operators'].push($(this).val());
 		});
-		console.log(settings['operators']);
 
 	} else {
 		settings = JSON.parse(atob(b64Code));
@@ -157,6 +164,7 @@ $(document).ready(function() {
 	}
 	validateSettings();
 	newProblem();
+	updateVisuals();
 
 	document.getElementById("submission").onkeyup = function(e){
 		if(e.keyCode == 13){
@@ -165,6 +173,17 @@ $(document).ready(function() {
 		updateBase12Elements();
 	}
 
-
+	numAMinSelector.keyup(function(event) {
+		updateBase12Elements();
+	});
+	numAMaxSelector.keyup(function(event) {
+		updateBase12Elements();
+	});
+	numBMinSelector.keyup(function(event) {
+		updateBase12Elements();
+	});
+	numBMaxSelector.keyup(function(event) {
+		updateBase12Elements();
+	});
 });
 

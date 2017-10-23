@@ -88,13 +88,13 @@
 					<div class="row">
 						<div class="input-group">
 							<span class="input-group-addon">A min</span>
-							<input type="text" class="form-control" id="a_min_value">
+							<input type="text" class="form-control base12" id="a_min_value">
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-group">
 							<span class="input-group-addon">A max</span>
-							<input type="text" class="form-control" id="a_max_value">
+							<input type="text" class="form-control base12" id="a_max_value">
 						</div>
 					</div>
 				</div>
@@ -102,13 +102,13 @@
 					<div class="row">
 						<div class="input-group">
 							<span class="input-group-addon">B min</span>
-							<input type="text" class="form-control" id="b_min_value">
+							<input type="text" class="form-control base12" id="b_min_value">
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-group">
 							<span class="input-group-addon">B max</span>
-							<input type="text" class="form-control" id="b_max_value">
+							<input type="text" class="form-control base12" id="b_max_value">
 						</div>
 					</div>
 				</div>
