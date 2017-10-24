@@ -17,24 +17,23 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-					<a class="nav-item nav-link" href="/basics">Learn the Basics</a>
+					<a class="nav-item nav-link" href="/#">Learn the Basics</a>
 					<a class="nav-item nav-link" href="/games">Games</a>
 				</div>
 			</div>
 		</nav>
 		
 		<div class="container">
-			<h1>About</h1>
-			<p> I wrote this website in my free time and purchased the domain and hosting with my own money expecting no return. There are no ads, no analytics collected about you (by me, requests to third party sites may leak information) and the games will always be free. However, if you think I did an exceptional job, you can send small amounts of Ethereum here:</p>
+			When counting in the decimal system, only ten symbols are needed to represent numbers. Numbers are grouped into groups of 10 to make them easier to represent.
+			In dozenal, two extra symbols are added on to the existing ten, for a total of 12. After 9, the two new numbers are added, X and E, to make this:
+			1, 2, 3, 4, 5, 6, 7, 8, 9, X, E, 10, ... E9, EX, EE, 100
 			
-			<p>0xfC8C8911A5Cf10318B9Df1F1EbCC5447C9b5a438</p>
 
-			<p>This project is also open source <a href="https://github.com/d-jo/learndozenal">on github.</a></p>
 		</div>
 
 		<div class="fixed-bottom">
 			<nav class="navbar navbar-dark bg-dark">
-				<a class="nav-item nav-link" href="#">About</a>
+				<a class="nav-item nav-link" href="/about">About</a>
 			</nav>
 		</div>
 
