@@ -1,5 +1,4 @@
-# Learn Dozenal
+# Cortex
 
-https://www.youtube.com/watch?v=U6xJfP7-HCc
+## Cortex website
 
-http://www.dozenal.org/
